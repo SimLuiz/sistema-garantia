@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Luiz Felipe Lopes de Moraes">
+    <meta name="description" content="Sistema de Garantias de Baterias para gestão de lançamentos de garantias de baterias com informações detalhadas de coleta.">
+    <title>Documentação - Sistema de Garantias de Baterias</title>
+    <link rel="stylesheet" href="../css/estilo_documentacao.css">
+</head>
+<body>
+    <header>
+        <h1>Documentação do Sistema de Garantias de Baterias</h1>
+        <nav>
+            <ul>
+                <li><a href="#introducao">Introdução</a></li>
+                <li><a href="#tecnologias">Tecnologias Utilizadas</a></li>
+                <li><a href="#funcionalidades">Funcionalidades</a></li>
+                <li><a href="#instalacao">Instalação</a></li>
+                <li><a href="#como-usar">Como Usar</a></li>
+                <li><a href="#estrutura">Estrutura do Projeto</a></li>
+                <li><a href="#contribuicoes">Contribuições</a></li>
+                <li><a href="#licenca">Licença</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introducao">
+            <h2>1. Introdução</h2>
+            <p>
+                O Sistema de Garantias de Baterias foi desenvolvido para facilitar o gerenciamento de garantias de baterias
+                coletadas durante o trabalho de motoristas. Ele permite o registro, consulta, edição e exclusão de lançamentos de 
+                garantias com informações detalhadas, como o modelo da bateria, código, rótulo, data de coleta e dados do cliente.
+            </p>
+        </section>
+
+        <section id="tecnologias">
+            <h2>2. Tecnologias Utilizadas</h2>
+            <ul>
+                <li><strong>Frontend:</strong> HTML, CSS</li>
+                <li><strong>Backend:</strong> PHP</li>
+                <li><strong>Banco de Dados:</strong> MySQL</li>
+                <li><strong>Ferramentas de Desenvolvimento:</strong> XAMPP (para rodar o servidor Apache e MySQL)</li>
+            </ul>
+        </section>
+
+        <section id="funcionalidades">
+            <h2>3. Funcionalidades</h2>
+            <ol>
+                <li><strong>Tela de Login:</strong> Acesso ao sistema por meio de credenciais de usuário.</li>
+                <li><strong>Tela Principal:</strong> Exibição de uma lista de lançamentos de garantias com opções de editar, excluir e buscar registros.</li>
+                <li><strong>Lançamento de Garantias:</strong> Registro de novas garantias de baterias com informações como estado, cidade, cliente, modelo da bateria, código da bateria, rótulo e data de coleta.</li>
+                <li><strong>Consulta e Edição de Lançamentos:</strong> Permite consultar e editar registros de garantias existentes.</li>
+                <li><strong>Busca e Filtro:</strong> Filtragem de lançamentos por cliente, cidade e data de coleta.</li>
+            </ol>
+        </section>
+
+        <section id="instalacao">
+            <h2>4. Como Instalar</h2>
+            <p>
+                Siga os passos abaixo para configurar o sistema em seu ambiente local:
+            </p>
+            <ul>
+                <li><strong>1. Baixe ou clone o repositório do projeto.</strong></li>
+                <li><strong>2. Configure o banco de dados:</strong> Acesse o <em>phpMyAdmin</em> ou use um cliente MySQL e crie um banco de dados chamado <code>sistema_garantias</code>. Importe o arquivo SQL para criar as tabelas.</li>
+                <li><strong>3. Configure o servidor web:</strong> Coloque os arquivos no diretório do servidor Apache (ex.: <code>htdocs</code> no XAMPP) e inicie o Apache e MySQL.</li>
+                <li><strong>4. Ajuste as configurações de conexão com o banco de dados:</strong> No arquivo <code>conexao.php</code>, edite as credenciais do banco de dados.</li>
+                <li><strong>5. Acesse o sistema:</strong> Abra o navegador e vá para <code>http://localhost/sistema-garantias/login.html</code>.</li>
+            </ul>
+        </section>
+
+        <section id="como-usar">
+            <h2>5. Como Usar</h2>
+            <ol>
+                <li><strong>Login:</strong> Na tela de login, insira as credenciais de usuário e clique em "Entrar".</li>
+                <li><strong>Tela Principal:</strong> Após o login, será exibida a lista de lançamentos de garantias. Você pode buscar, filtrar e editar registros existentes.</li>
+                <li><strong>Adicionar Lançamento:</strong> Clique para adicionar um novo lançamento de garantia. Preencha os campos necessários e clique em "Salvar".</li>
+                <li><strong>Editar ou Excluir Lançamento:</strong> Na lista de lançamentos, você pode editar ou excluir registros existentes.</li>
+            </ol>
+        </section>
+
+        <section id="estrutura">
+            <h2>6. Estrutura do Projeto</h2>
+            <pre>
+                📁 sistema-garantias
+                ├── 📁 backend
+                │   ├── 📁 banco
+                │   │   ├── database_backup.sql         → Backup de segurança do banco de dados.
+                │   │   └── database.sql                → Script de criação da estrutura inicial do banco de dados.
+                │   │
+                │   ├── 📁 controllers                  → Scripts PHP que processam ações e interagem com o banco.
+                │   │   ├── atualizar_lancamento.php   → Atualiza dados de um lançamento já existente.
+                │   │   ├── editar_bateria.php         → Edita dados de uma bateria específica de um lançamento.
+                │   │   ├── editar_inline.php          → Edita diretamente uma célula/linha de bateria na tabela.
+                │   │   ├── excluir_bateria_individual.php → Exclui uma única bateria de um lançamento.
+                │   │   ├── excluir_bateria.php        → Exclui todas as baterias de um determinado lançamento.
+                │   │   ├── excluir_lancamento.php     → Remove completamente um lançamento do sistema.
+                │   │   ├── exportar_csv.php           → Exporta os lançamentos para um arquivo CSV.
+                │   │   ├── logout.php                 → Encerra a sessão do usuário logado.
+                │   │   └── salvar_lancamento.php      → Salva um novo lançamento no banco de dados.
+                │   │
+                │   ├── 📁 includes                     → Arquivos de suporte usados por várias páginas.
+                │   │   ├── conexao.php                → Faz a conexão com o banco de dados MySQL.
+                │   │   └── validar_login.php          → Valida se o usuário está autenticado para acessar as páginas protegidas.
+                ├── 📁 frontend
+                │   ├── 📁 css                         
+                │   │   ├── estilo_documentacao.css    → Estilo aplicado na documentação do sistema.
+                │   │   └── estilo.css                 → Estilo principal aplicado às páginas do sistema.
+                │   │
+                │   ├── 📁 documentos_sistema
+                │   │   ├── documentacao.html          → Página HTML explicando o funcionamento do sistema.
+                │   │   └── manual_uso.txt             → Manual de uso simples e direto para o usuário final.
+                │   │
+                │   ├── 📁 views                       → Telas visuais do sistema.
+                │   │   ├── consultar_lancamentos.php  → Permite ao usuário consultar, editar e excluir lançamentos existentes.
+                │   │   ├── editar_lancamento.php      → Tela para alterar os dados de um lançamento selecionado.
+                │   │   ├── lancar_garantias.php       → Tela onde são inseridos novos lançamentos e baterias (formulário principal).
+                │   │   ├── painel.php                 → Página principal após login, com atalhos para funcionalidades.               
+                📄 login.html                      → Tela de login do sistema.
+                📄 README.md                       → Arquivo com informações sobre o sistema, como instalar e usar.
+               
+            </pre>
+        </section>
+
+        <section id="contribuicoes">
+            <h2>7. Contribuições</h2>
+            <p>
+                Se você deseja contribuir para o projeto, siga os passos abaixo:
+            </p>
+            <ol>
+                <li>Faça um <strong>fork</strong> do repositório.</li>
+                <li>Crie uma nova <strong>branch</strong> (<code>git checkout -b minha-nova-feature</code>).</li>
+                <li>Faça as alterações desejadas.</li>
+                <li><strong>Commit</strong> suas alterações (<code>git commit -am 'Adicionando nova feature'</code>).</li>
+                <li>Envie para o repositório (<code>git push origin minha-nova-feature</code>).</li>
+                <li>Abra um <strong>pull request</strong> para análise.</li>
+            </ol>
+        </section>
+
+        <section id="licenca">
+            <h2>8. Licença</h2>
+            <p>
+                Este projeto está sob a licença <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a>.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Luiz Felipe Lopes de Moraes. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
