@@ -1,0 +1,130 @@
+Manual de Instruções do Sistema de Garantia de Baterias
+
+Introdução
+
+Bem-vindo ao Sistema de Garantia de Baterias! Este sistema foi desenvolvido para gerenciar e registrar as garantias de baterias coletadas durante as entregas realizadas por motoristas. Aqui, você poderá registrar as baterias, consultar lançamentos anteriores e editar informações conforme necessário.
+
+Este manual tem como objetivo fornecer orientações sobre como utilizar o sistema corretamente.
+
+Acessando o Sistema
+Tela de Login
+Para acessar o sistema, você precisa fornecer um nome de usuário e uma senha válidos.
+
+Usuário: Seu nome de usuário.
+
+Senha: Sua senha de acesso.
+
+Autenticação
+Após preencher as informações e clicar no botão "Entrar", o sistema validará suas credenciais. Se as informações estiverem corretas, você será redirecionado para a tela principal do sistema.
+
+Tela Principal
+A tela principal do sistema exibe as principais funcionalidades disponíveis após o login:
+
+Lançamento de Garantias
+Clique no botão "Lançar Garantia" para registrar novas baterias coletadas. O formulário de lançamento permite que você insira as seguintes informações:
+
+Estado
+
+Cidade
+
+Nome do Cliente
+
+Modelo da Bateria
+
+Código da Bateria
+
+Rótulo da Bateria
+
+Data de Coleta
+
+O sistema permite o registro de até 30 baterias por vez, e você pode adicionar as baterias uma a uma. Após o preenchimento de todos os campos necessários, clique no botão "Finalizar Lançamento" para concluir o registro.
+
+Consulta e Edição de Lançamentos
+Através da opção "Consultar Lançamentos", você poderá visualizar todos os lançamentos realizados, com informações sobre as baterias coletadas, estado, cidade e outros dados relevantes.
+
+Filtros de Busca: Você pode buscar lançamentos por cliente, cidade ou data.
+
+Edição de Lançamentos: Para editar um lançamento, clique sobre o item desejado e modifique os dados conforme necessário. Não se esqueça de salvar as alterações.
+
+Exportação de Dados
+O sistema permite que você exporte os lançamentos de baterias para PDF ou Excel/CSV. Para isso, basta clicar no botão de exportação disponível na tela de consulta de lançamentos.
+
+Funcionalidades Detalhadas
+Lançamento de Garantias
+Clique no botão "Lançar Garantia".
+
+Preencha as informações solicitadas para cada bateria coletada:
+
+Estado: Selecione o estado.
+
+Cidade: Digite o nome da cidade.
+
+Nome do Cliente: Insira o nome do cliente que forneceu as baterias.
+
+Modelo da Bateria: Insira o modelo da bateria.
+
+Código da Bateria: O código único da bateria.
+
+Rótulo da Bateria: O rótulo que identifica a bateria.
+
+Data de Coleta: A data em que a bateria foi coletada.
+
+Após inserir os dados de cada bateria, você pode adicionar a próxima bateria ou finalizar o lançamento.
+
+Quando todas as baterias estiverem inseridas, clique em "Finalizar Lançamento".
+
+Consulta e Edição de Lançamentos
+Acesse a tela de consulta de lançamentos clicando no menu "Consultar Lançamentos".
+
+Use os filtros de cliente, cidade ou data para buscar lançamentos específicos.
+
+Para editar um lançamento, clique sobre ele e modifique os dados conforme necessário. Clique em "Salvar Alterações" para concluir a edição.
+
+Para excluir um lançamento, clique no botão de exclusão ao lado do item desejado.
+
+
+Exemplo de Fluxo do Sistema
+1. Lançamento de Garantias
+Acesse a Tela de Lançamento:
+
+Clique em "Lançar Garantia".
+
+Preencha os Campos:
+
+Informe o estado, cidade, cliente, modelo da bateria, código e rótulo.
+
+Adicionar mais baterias:
+
+Clique em "Adicionar Bateria" para adicionar outra bateria ao lançamento.
+
+Finalizar Lançamento:
+
+Após adicionar todas as baterias, clique em "Finalizar Lançamento".
+
+2. Consultar Lançamentos
+Acesse a Tela de Consulta:
+
+Clique em "Consultar Lançamentos".
+
+Utilize os Filtros:
+
+Filtre os lançamentos por cliente, cidade ou data.
+
+Editar ou Excluir:
+
+Clique no lançamento para editar ou excluir os dados.
+
+Segurança e Privacidade
+Autenticação: O sistema exige login para garantir que apenas usuários autorizados possam acessar as funcionalidades.
+
+Criptografia de Senha: As senhas dos usuários são armazenadas de forma segura, usando criptografia MD5.
+
+Backup: O sistema realiza backups periódicos para garantir a integridade dos dados.
+
+Suporte Técnico
+Em caso de problemas técnicos ou dúvidas sobre o sistema, entre em contato com o suporte através do e-mail: suporte@empresa.com ou ligue para (61) 99999-9999.
+
+Conclusão
+Com este sistema, é possível gerenciar de forma eficiente o registro de garantias de baterias coletadas durante as entregas, oferecendo uma solução ágil e prática para os motoristas e gestores do processo.
+
+Se houver qualquer outra dúvida ou necessidade de ajuste no sistema, o suporte técnico está à disposição para ajudar.
