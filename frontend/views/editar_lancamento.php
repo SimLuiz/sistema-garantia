@@ -57,7 +57,7 @@ $res_bat = $conn->query($sql_bat);
             max-width: 800px;
             width: 100%;
             text-align: left;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
 
@@ -108,7 +108,7 @@ $res_bat = $conn->query($sql_bat);
 
         input[type="submit"]:hover {
             background-color: #8c8c8c;
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
         }
 
         .bateria {
@@ -132,7 +132,7 @@ $res_bat = $conn->query($sql_bat);
 
         input:hover {
             background-color: #8c8c8c;
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
         }
 
         .bateria label {
@@ -153,15 +153,17 @@ $res_bat = $conn->query($sql_bat);
             font-size: 12px;
             padding: 10px 8px;
             /* Aumenta o espaçamento interno do botão (vertical e horizontal) */
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-            width: fit-content;        /* ⚠️ Faz o botão ter o tamanho do conteúdo */
-            margin-left: 0;            /* ⚠️ Ajuste isso para o quanto quiser mover para a direita */
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            width: fit-content;
+            /* ⚠️ Faz o botão ter o tamanho do conteúdo */
+            margin-left: 0;
+            /* ⚠️ Ajuste isso para o quanto quiser mover para a direita */
 
         }
 
         .meu-botao:hover {
             background-color: #8c8c8c;
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
         }
 
         .meu-botao:active {
@@ -170,12 +172,12 @@ $res_bat = $conn->query($sql_bat);
 
         #btnAtualizar {
             background-color: #8c8c8c;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
         #btnAtualizar:hover {
             background-color: #b5b5b5;
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
         }
 
         #btnAtualizar:active {
@@ -191,14 +193,14 @@ $res_bat = $conn->query($sql_bat);
             font-weight: bold;
             margin-top: 10px;
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
-                        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
             cursor: pointer;
         }
 
         .btn-excluir:hover {
             background-color: #c9302c;
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),
-                        0 17px 50px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+                0 17px 50px 0 rgba(0, 0, 0, 0.19);
         }
 
         .btn-excluir:active {
@@ -223,9 +225,9 @@ $res_bat = $conn->query($sql_bat);
 <body>
     <div class="container">
 
-<button class="meu-botao" onclick="window.location.href='/sistema-garantias/frontend/views/consultar_lancamentos.php'">
-    ← Voltar para Consultar Lançamentos
-</button>
+        <button class="meu-botao" onclick="window.location.href='/sistema-garantias/frontend/views/consultar_lancamentos.php'">
+            ← Voltar para Consultar Lançamentos
+        </button>
 
 
 
@@ -270,7 +272,7 @@ $res_bat = $conn->query($sql_bat);
         <form action="/sistema-garantias/backend/controllers/excluir_lancamento.php" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir este lançamento? Esta ação é irreversível.');">
             <input type="hidden" name="id_lancamento" value="<?= $id ?>">
             <button type="submit" class="btn-excluir">
-                 Excluir Lançamento
+                Excluir Lançamento
             </button>
 
         </form>

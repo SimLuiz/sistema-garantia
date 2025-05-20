@@ -41,16 +41,16 @@ if (!isset($_SESSION['logado'])) {
       margin: 10px;
       /* espaçamento entre os links */
       border-radius: 8px;
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     }
 
     a:hover {
       background-color: #8c8c8c;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     }
 
-    a:active{
+    a:active {
       transform: translateY(4px);
     }
 

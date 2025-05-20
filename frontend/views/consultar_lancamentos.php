@@ -82,12 +82,12 @@ $result = $conn->query($sql);
             font-size: 15px;
             padding: 10px 20px;
             /* Aumenta o espaçamento interno do botão (vertical e horizontal) */
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
         a:hover {
             background-color: #8c8c8c;
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
         }
 
         a:active {
@@ -104,7 +104,7 @@ $result = $conn->query($sql);
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
         th,
@@ -168,7 +168,7 @@ $result = $conn->query($sql);
             padding: 5px;
         }
 
-        .edit-battery-form:active  {
+        .edit-battery-form:active {
             transform: translateY(1px);
 
         }
@@ -184,7 +184,7 @@ $result = $conn->query($sql);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 1000;
             animation: slideIn 0.3s ease-out;
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
         }
 
         .btn-voltar {
@@ -195,15 +195,15 @@ $result = $conn->query($sql);
             margin-bottom: 10px;
             font-size: 16px;
             padding: 10px 8px;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),
-                        0 6px 20px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
             cursor: pointer;
         }
 
         .btn-voltar:hover {
             background-color: #8c8c8c;
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),
-                        0 17px 50px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+                0 17px 50px 0 rgba(0, 0, 0, 0.19);
         }
 
         .btn-voltar:active {
@@ -218,14 +218,14 @@ $result = $conn->query($sql);
             padding: 10px 8px;
             font-size: 12px;
             cursor: pointer;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2),
-                        0 6px 20px rgba(0,0,0,0.19);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
+                0 6px 20px rgba(0, 0, 0, 0.19);
         }
 
         .btn-limpar:hover {
             background-color: #8c8c8c;
-            box-shadow: 0 12px 16px rgba(0,0,0,0.24),
-                        0 17px 50px rgba(0,0,0,0.19);
+            box-shadow: 0 12px 16px rgba(0, 0, 0, 0.24),
+                0 17px 50px rgba(0, 0, 0, 0.19);
         }
 
         .btn-limpar:active {
@@ -241,14 +241,14 @@ $result = $conn->query($sql);
             font-size: 12px;
             cursor: pointer;
             margin-right: 5px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2),
-                        0 6px 20px rgba(0,0,0,0.19);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
+                0 6px 20px rgba(0, 0, 0, 0.19);
         }
 
         .btn-editar:hover {
             background-color: #8c8c8c;
-            box-shadow: 0 12px 16px rgba(0,0,0,0.24),
-                        0 17px 50px rgba(0,0,0,0.19);
+            box-shadow: 0 12px 16px rgba(0, 0, 0, 0.24),
+                0 17px 50px rgba(0, 0, 0, 0.19);
         }
 
         .btn-editar:active {
@@ -293,7 +293,7 @@ $result = $conn->query($sql);
         </button><br><br>
 
         <h2>Consulta de Lançamentos</h2>
-        
+
 
         <div class="filtros">
             <form method="GET" action="consultar_lancamentos.php">
@@ -304,7 +304,7 @@ $result = $conn->query($sql);
                 <input type="submit" value="Filtrar">
                 <button type="button" class="btn-limpar" onclick="window.location.href='consultar_lancamentos.php'">
                     Limpar
-            </button>
+                </button>
 
             </form>
         </div>

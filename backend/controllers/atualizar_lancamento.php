@@ -69,7 +69,7 @@ if (!empty($_POST['nova_bateria']['modelo']) && !empty($_POST['nova_bateria']['c
             max-width: 500px;
             width: 90%;
             border: 1px solid black;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
         h2 {
@@ -90,16 +90,16 @@ if (!empty($_POST['nova_bateria']['modelo']) && !empty($_POST['nova_bateria']['c
             border-radius: 6px;
             transition: background-color 0.3s ease;
             border: 1px solid black;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);    
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
         .btn-voltar:hover {
             background-color: #b5b5b5;
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
         }
 
-        .btn-voltar:active{
-            transform: translateY(4px);    
+        .btn-voltar:active {
+            transform: translateY(4px);
         }
 
         @media (max-width: 768px) {

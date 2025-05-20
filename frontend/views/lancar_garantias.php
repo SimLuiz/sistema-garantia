@@ -59,16 +59,16 @@ if (!isset($_SESSION['logado'])) {
       border: 1px solid black;
       /* borda escuro */
       margin: 5px 0;
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     button:hover {
       background-color: #8c8c8c;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     }
 
     button:active {
-    transform: translateY(4px);
+      transform: translateY(4px);
     }
 
     .container {
@@ -80,7 +80,7 @@ if (!isset($_SESSION['logado'])) {
       text-align: center;
       max-width: 700px;
       width: 100%;
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     /*edicao do botao voltar painel*/
@@ -100,13 +100,13 @@ if (!isset($_SESSION['logado'])) {
       font-size: 14px;
       border: 1px solid black;
       /* borda escuro */
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     .btn-voltar:hover {
       background-color: #8c8c8c;
       /* leve cinza ao passar o mouse */
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     }
 
     .btn-voltar:active {
@@ -115,18 +115,17 @@ if (!isset($_SESSION['logado'])) {
 
     #btnFinalizar {
       background-color: #8c8c8c;
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     #btnFinalizar:hover {
       background-color: #b5b5b5;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     }
 
     #btnFinalizar:active {
       transform: translateY(4px);
     }
-
   </style>
 
 
