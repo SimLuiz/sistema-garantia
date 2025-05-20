@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <link rel="stylesheet" href="/sistema-garantias/frontend/css/estilo.css">
   <title>Login - Sistema de Garantias</title>
@@ -124,10 +125,12 @@ input[type="submit"]:active { /*animacao do botao*/
     <h2>Bem-vindo ao Sistema de Garantias</h2>
     <p><strong>Por favor, faça login para continuar.</strong></p>
     <form action="/sistema-garantias/backend/includes/validar_login.php" method="POST">
-    <label>Usuário:</label><br>
-    <input type="text" name="usuario"><br><br>
-    <label>Senha:</label><br>
-    <input type="password" name="senha"><br><br>
+    <label for="usuario">Usuário:</label><br>
+    <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuário" required><br><br>
+
+    <label for="senha">Senha:</label><br>
+    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required><br><br>
+
     <input type="submit" value="Entrar">
   </form>
   </div>
