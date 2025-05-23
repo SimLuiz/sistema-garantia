@@ -64,42 +64,55 @@ Antes de executar o projeto, certifique-se de ter as seguintes ferramentas insta
 
 Acessar o Sistema: Abra o navegador e digite http://localhost/sistema-garantias/login.html para acessar a tela de login. Após o login, você será redirecionado para o painel principal.
 
-                📁 sistema-garantias
-                ├── 📁 backend
-                │   ├── 📁 banco
-                │   │   ├── database_backup.sql         → Backup de segurança do banco de dados.
-                │   │   └── database.sql                → Script de criação da estrutura inicial do banco de dados.
-                │   │
-                │   ├── 📁 controllers                  → Scripts PHP que processam ações e interagem com o banco.
-                │   │   ├── atualizar_lancamento.php   → Atualiza dados de um lançamento já existente.
-                │   │   ├── editar_bateria.php         → Edita dados de uma bateria específica de um lançamento.
-                │   │   ├── editar_inline.php          → Edita diretamente uma célula/linha de bateria na tabela.
-                │   │   ├── excluir_bateria_individual.php → Exclui uma única bateria de um lançamento.
-                │   │   ├── excluir_bateria.php        → Exclui todas as baterias de um determinado lançamento.
-                │   │   ├── excluir_lancamento.php     → Remove completamente um lançamento do sistema.
-                │   │   ├── exportar_csv.php           → Exporta os lançamentos para um arquivo CSV.
-                │   │   ├── logout.php                 → Encerra a sessão do usuário logado.
-                │   │   └── salvar_lancamento.php      → Salva um novo lançamento no banco de dados.
-                │   │
-                │   ├── 📁 includes                     → Arquivos de suporte usados por várias páginas.
-                │   │   ├── conexao.php                → Faz a conexão com o banco de dados MySQL.
-                │   │   └── validar_login.php          → Valida se o usuário está autenticado para acessar as páginas protegidas.
-                ├── 📁 frontend
-                │   ├── 📁 css
-                │   │   ├── estilo_documentacao.css    → Estilo aplicado na documentação do sistema.
-                │   │   └── estilo.css                 → Estilo principal aplicado às páginas do sistema.
-                │   │
-                │   ├── 📁 documentos_sistema
-                │   │   ├── documentacao.html          → Página HTML explicando o funcionamento do sistema.
-                │   │   └── manual_uso.txt             → Manual de uso simples e direto para o usuário final.
-                │   │
-                │   ├── 📁 views                       → Telas visuais do sistema.
-                │   │   ├── consultar_lancamentos.php  → Permite ao usuário consultar, editar e excluir lançamentos existentes.
-                │   │   ├── editar_lancamento.php      → Tela para alterar os dados de um lançamento selecionado.
-                │   │   ├── lancar_garantias.php       → Tela onde são inseridos novos lançamentos e baterias (formulário principal).
-                │   │   ├── painel.php                 → Página principal após login, com atalhos para funcionalidades.
-                📄 login.html                      → Tela de login do sistema.
-                📄 README.md                       → Arquivo com informações sobre o sistema, como instalar e usar.
+         📁 sistema-garantias
+         📁 backend
+         │
+         ├── 📁 banco
+         │   └── database.sql                      # Script SQL para criação do banco de dados e tabelas
+         │
+         ├── 📁 controllers                       # Arquivos PHP que controlam ações do sistema (CRUD, exportação, logout)
+         │   ├── atualizar_lancamento.php         # Atualiza os dados de um lançamento de garantia
+         │   ├── editar_bateria.php                # Edita os dados de uma bateria específica
+         │   ├── editar_inline.php                 # Edição rápida inline de dados na interface
+         │   ├── excluir_bateria_individual.php   # Remove uma bateria específica de um lançamento
+         │   ├── excluir_bateria.php               # Exclui baterias, possivelmente em lote
+         │   ├── excluir_lancamento.php            # Apaga um lançamento inteiro de garantias
+         │   ├── exportar_csv.php                  # Exporta lançamentos em formato CSV para download
+         │   ├── logout.php                       # Finaliza a sessão do usuário (logout)
+         │   └── salvar_lancamento.php             # Salva um novo lançamento no banco de dados
+         │
+         ├── 📁 includes                         # Arquivos auxiliares comuns para conexão e autenticação
+         │   ├── conexao.php                      # Estabelece conexão com o banco MySQL
+         │   └── validar_login.php                # Valida se o usuário está logado
+         │
+         ├── 📁 documentacao                    # Arquivos e recursos para documentação do sistema
+         │   ├── 📁 css
+         │   │   └── estilo_documentacao.css      # CSS para estilizar a documentação
+         │   │
+         │   ├── 📁 documentos_sistema
+         │   │   ├── documentacao.html            # Documento HTML com informações técnicas/uso do sistema
+         │   │   └── manual_uso.txt               # Manual de uso em formato texto para o usuário final
+         │   │
+         │   └── 📁 imagens                       # Imagens ilustrativas para a documentação
+         │       ├── consulta.png
+         │       ├── lancamento.png
+         │       ├── login.png
+         │       ├── painel.png
+         │       └── powerbi.png
+         │
+         ├── 📁 frontend                        # Arquivos da interface do usuário (CSS e páginas PHP)
+         │   ├── 📁 css
+         │   │   └── estilo.css                   # Estilo principal do sistema (CSS)
+         │   │
+         │   └── 📁 views
+         │       ├── consultar_lancamentos.php   # Página para visualizar e buscar lançamentos
+         │       ├── editar_lancamento.php        # Página para editar um lançamento de garantia
+         │       ├── lancar_garantias.php         # Página para cadastrar novos lançamentos
+         │       ├── painel.php                   # Tela principal/dashboard após login
+         │
+         │
+         |── login.html                          # Página de login para acesso ao sistema
+         └── README.md                          # Documentação geral do projeto para desenvolvedores
 
 Como Usar
 Login: Na tela de login, insira as credenciais do usuário e clique em "Entrar".
