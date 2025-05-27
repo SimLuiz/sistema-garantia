@@ -139,10 +139,42 @@ if (!isset($_SESSION['logado'])) {
     <form action="/sistema-garantias/backend/controllers/salvar_lancamento.php" method="POST">
 
       <label>Estado:</label><br>
-      <input type="text" name="estado" required><br>
+      <select name="estado" id="estado" required onchange="carregarCidades()">
+        <option value="">Selecione o estado</option>
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+      </select><br>
 
       <label>Cidade:</label><br>
-      <input type="text" name="cidade" required><br>
+      <select name="cidade" id="cidade" required>
+        <option value="">Selecione o estado primeiro</option>
+      </select><br>
+
 
       <label for="cliente_nome">Nome do Cliente:</label><br>
       <input type="text" name="cliente_nome" id="cliente_nome" required><br>
@@ -180,15 +212,15 @@ if (!isset($_SESSION['logado'])) {
       div.setAttribute("data-id", contador); // facilita encontrar e remover
 
       div.innerHTML = `
-    <strong>Bateria ${contador}</strong><br>
-    <label>Modelo:</label><br>
-    <input type="text" name="baterias[${contador}][modelo]" required><br>
-    <label>Código:</label><br>
-    <input type="text" name="baterias[${contador}][codigo]" required><br>
-    <label>Rótulo:</label><br>
-    <input type="text" name="baterias[${contador}][rotulo]" required><br>
-    <button type="button" onclick="removerBateria(this)">🗑 Remover</button>
-  `;
+        <strong>Bateria ${contador}</strong><br>
+        <label>Modelo:</label><br>
+        <input type="text" name="baterias[${contador}][modelo]" required><br>
+        <label>Código:</label><br>
+        <input type="text" name="baterias[${contador}][codigo]" required><br>
+        <label>Rótulo:</label><br>
+        <input type="text" name="baterias[${contador}][rotulo]" required><br>
+        <button type="button" onclick="removerBateria(this)">🗑 Remover</button>
+      `;
 
       container.appendChild(div);
     }
@@ -197,6 +229,41 @@ if (!isset($_SESSION['logado'])) {
       const div = botao.parentElement;
       div.remove();
       contador--; // decrementa o contador
+    }
+
+    //API para puxar estados e cidades
+
+    function carregarEstados() {
+      fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome")
+        .then(res => res.json())
+        .then(estados => {
+          const estadoSelect = document.getElementById("estado");
+          estados.forEach(estado => {
+            const option = document.createElement("option");
+            option.value = estado.id;
+            option.text = estado.nome;
+            estadoSelect.add(option);
+          });
+        });
+    }
+
+    function carregarCidades() {
+      const estadoId = document.getElementById("estado").value;
+      const cidadeSelect = document.getElementById("cidade");
+
+      cidadeSelect.innerHTML = "<option>Carregando...</option>";
+
+      fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoId}/municipios`)
+        .then(res => res.json())
+        .then(cidades => {
+          cidadeSelect.innerHTML = "<option value=''>Selecione a cidade</option>";
+          cidades.forEach(cidade => {
+            const option = document.createElement("option");
+            option.value = cidade.nome;
+            option.text = cidade.nome;
+            cidadeSelect.add(option);
+          });
+        });
     }
   </script>
 
