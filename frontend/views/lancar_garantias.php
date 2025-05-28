@@ -15,7 +15,7 @@ if (!isset($_SESSION['logado'])) {
   <title>Lançar Garantias</title>
   <style>
     body {
-      background-color: #666666;
+      background-color: #E4E4E5;
       font-family: Arial, sans-serif;
       padding: 20px;
     }

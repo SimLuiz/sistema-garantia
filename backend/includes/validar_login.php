@@ -28,7 +28,7 @@ if ($result->num_rows == 1) {
         <style>
             /* design para pagina */
             body {
-                background-color: #666666;
+                background-color: #E4E4E5;
                 margin: 0;
                 padding: 0;
                 font-family: 'Segoe UI', sans-serif;

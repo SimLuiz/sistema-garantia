@@ -52,7 +52,7 @@ if (!empty($_POST['nova_bateria']['modelo']) && !empty($_POST['nova_bateria']['c
             margin: 0;
             padding: 0;
             font-family: "Segoe UI", sans-serif;
-            background-color: #666666;
+            background-color: #E4E4E5;
             display: flex;
             justify-content: center;
             align-items: center;

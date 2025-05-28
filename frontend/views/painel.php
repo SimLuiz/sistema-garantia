@@ -15,7 +15,7 @@ if (!isset($_SESSION['logado'])) {
   <title>Painel - Sistema de Garantias</title>
   <style>
     body {
-      background-color: #666666;
+      background-color: #E4E4E5;
       font-family: Arial, sans-serif;
       text-align: center;
       margin-top: 100px;

@@ -44,7 +44,7 @@ $res_bat = $conn->query($sql_bat);
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
-            background-color: #666666;
+            background-color: #E4E4E5;
         }
 
         .container {
