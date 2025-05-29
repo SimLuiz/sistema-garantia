@@ -9,10 +9,10 @@ $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND senha = '$senha'";
 $result = $conn->query($sql);
 
 if ($result->num_rows == 1) {
-
     $_SESSION['logado'] = true;
     $dados_usuario = $result->fetch_assoc(); // pega o usuário como array associativo
     $_SESSION['usuario_id'] = $dados_usuario['id'];
+    $_SESSION['tipo_usuario'] = $dados_usuario['tipo']; // 'admin' ou 'motorista'
     $_SESSION['usuario'] = $dados_usuario['usuario']; // salva o nome de usuário na sessão    
     $_SESSION['login_sucesso'] = true; // Variável de sucesso
     header("Location: /sistema-garantias/frontend/views/painel.php");

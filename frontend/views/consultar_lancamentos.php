@@ -7,8 +7,17 @@ if (!isset($_SESSION['logado'])) {
 
 include(__DIR__ . "/../../backend/includes/conexao.php");
 
-// Consulta lançamentos
+// Pega o tipo e id do usuário logado da sessão
+$tipo_usuario = $_SESSION['tipo_usuario'] ?? 'motorista'; // default para motorista
+$id_usuario = $_SESSION['usuario_id'] ?? 0;
+
+// Monta o filtro inicial considerando o tipo de usuário
 $where = [];
+if ($tipo_usuario !== 'admin') {
+    $where[] = "l.usuario_id = $id_usuario";
+}
+
+// Filtros da consulta
 if (!empty($_GET['cliente'])) {
     $cliente = $conn->real_escape_string($_GET['cliente']);
     $where[] = "c.nome LIKE '%$cliente%'";
@@ -18,11 +27,11 @@ if (!empty($_GET['cidade'])) {
     $where[] = "l.cidade LIKE '%$cidade%'";
 }
 if (!empty($_GET['data_ini'])) {
-    $ini = $_GET['data_ini'];
+    $ini = $conn->real_escape_string($_GET['data_ini']);
     $where[] = "l.data_coleta >= '$ini'";
 }
 if (!empty($_GET['data_fim'])) {
-    $fim = $_GET['data_fim'];
+    $fim = $conn->real_escape_string($_GET['data_fim']);
     $where[] = "l.data_coleta <= '$fim'";
 }
 
@@ -34,8 +43,6 @@ $sql = "SELECT l.*, c.nome AS nome_cliente, u.usuario AS nome_usuario
         JOIN usuarios u ON l.usuario_id = u.id 
         $filtro 
         ORDER BY l.criado_em DESC";
-
-
 
 $result = $conn->query($sql);
 ?>

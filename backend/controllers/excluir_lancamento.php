@@ -9,8 +9,23 @@ include(__DIR__ . "/../../backend/includes/conexao.php");
 
 if (isset($_POST['id_lancamento'])) {
     $id_lancamento = (int) $_POST['id_lancamento'];
+    $usuario_id = $_SESSION['usuario_id'] ?? null;
 
-    // Excluir as baterias associadas ao lançamento
+    if (!$usuario_id) {
+        $_SESSION['msg_erro'] = "Usuário não identificado.";
+        header("Location: ../../frontend/views/consultar_lancamentos.php");
+        exit;
+    }
+
+    // Registrar exclusão no log
+    $sql_log = "INSERT INTO log_exclusoes (id_lancamento, usuario_id) VALUES (?, ?)";
+    if ($stmt = $conn->prepare($sql_log)) {
+        $stmt->bind_param("ii", $id_lancamento, $usuario_id);
+        $stmt->execute();
+        $stmt->close();
+    }
+
+    // Excluir baterias associadas ao lançamento
     $sql_baterias = "DELETE FROM baterias WHERE id_lancamento = ?";
     if ($stmt = $conn->prepare($sql_baterias)) {
         $stmt->bind_param("i", $id_lancamento);
@@ -26,14 +41,10 @@ if (isset($_POST['id_lancamento'])) {
         $stmt->close();
     }
 
-    // Definir a mensagem de sucesso na sessão
     $_SESSION['msg_sucesso'] = 'Lançamento excluído com sucesso!';
-
-    // Redirecionar de volta para a consulta de lançamentos
     header("Location: ../../frontend/views/consultar_lancamentos.php?status=sucesso");
     exit;
 } else {
-    // Se o ID do lançamento não foi passado, redirecionar de volta
     header("Location: ../../frontend/views/consultar_lancamentos.php");
     exit;
 }
