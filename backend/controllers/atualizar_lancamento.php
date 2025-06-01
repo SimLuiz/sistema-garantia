@@ -52,7 +52,7 @@ if (!empty($_POST['nova_bateria']['modelo']) && !empty($_POST['nova_bateria']['c
             margin: 0;
             padding: 0;
             font-family: "Segoe UI", sans-serif;
-            background-color: #E4E4E5;
+            background-color: #666666;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -60,8 +60,8 @@ if (!empty($_POST['nova_bateria']['modelo']) && !empty($_POST['nova_bateria']['c
         }
 
         .container {
-            background-color: #b5b5b5;
-            color: black;
+            background-color: #3c3c3c;
+            color: white;
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -73,19 +73,20 @@ if (!empty($_POST['nova_bateria']['modelo']) && !empty($_POST['nova_bateria']['c
         }
 
         h2 {
-            color: #2c3e50;
+            color: white;
         }
 
         p {
-            color: #444;
+            color: white;
         }
 
         .btn-voltar {
             display: inline-block;
             margin-top: 20px;
             padding: 12px 24px;
-            background-color: #8c8c8c;
-            color: black;
+            background-color: #b5b5b5;
+            color: white;
+            font-weight: bold;
             text-decoration: none;
             border-radius: 6px;
             transition: background-color 0.3s ease;
@@ -94,7 +95,7 @@ if (!empty($_POST['nova_bateria']['modelo']) && !empty($_POST['nova_bateria']['c
         }
 
         .btn-voltar:hover {
-            background-color: #b5b5b5;
+            background-color: #8c8c8c;
             box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
         }
 

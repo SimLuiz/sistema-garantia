@@ -64,7 +64,7 @@ foreach ($baterias as $bateria) {
     <style>
         /*design para pagina salva_lancamento*/
         body {
-            background-color: #E4E4E5;
+            background-color: #666666;
             margin: 0;
             padding: 0;
             font-family: "Segoe UI", sans-serif;
@@ -75,7 +75,7 @@ foreach ($baterias as $bateria) {
         }
 
         .container {
-            background-color: #b5b5b5;
+            background-color: #3c3c3c;
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -86,18 +86,18 @@ foreach ($baterias as $bateria) {
         }
 
         h2 {
-            color: #2c3e50;
+            color: #fff;
         }
 
         p {
-            color: #444;
+            color: #fff;
         }
 
         .btn-voltar {
             display: inline-block;
-            background-color: #8c8c8c;
+            background-color: #b5b5b5;
             /* fundo escuro */
-            color: black;
+            color: white;
             /* texto escuro */
             margin-top: 20px;
             padding: 12px 24px;
@@ -107,10 +107,11 @@ foreach ($baterias as $bateria) {
             /* borda escuro */
             transition: background-color 0.3s ease;
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            font-weight: bold;
         }
 
         .btn-voltar:hover {
-            background-color: #b5b5b5;
+            background-color: #8c8c8c;
             box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
         }
 

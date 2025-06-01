@@ -15,7 +15,7 @@ if (!isset($_SESSION['logado'])) {
   <title>Lançar Garantias</title>
   <style>
     body {
-      background-color: #E4E4E5;
+      background-color: #666666;
       font-family: Arial, sans-serif;
       padding: 20px;
     }
@@ -38,7 +38,8 @@ if (!isset($_SESSION['logado'])) {
     }
 
     label {
-      color: black;
+      color: white;
+      font-weight: bold;
     }
 
     .bateria {
@@ -46,13 +47,14 @@ if (!isset($_SESSION['logado'])) {
       border-radius: 10px;
       padding: 10px;
       margin: 10px 0;
+      color: white;
     }
 
     button {
       padding: 10px 15px;
       background-color: #b5b5b5;
       /* fundo escuro */
-      color: black;
+      color: white;
       /* texto escuro */
       border: none;
       border-radius: 5px;
@@ -73,12 +75,12 @@ if (!isset($_SESSION['logado'])) {
 
     .container {
       position: relative;
-      background-color: #b5b5b5;
+      background-color: #3c3c3c;
       padding: 40px;
       border-radius: 10px;
       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
       text-align: center;
-      max-width: 700px;
+      max-width: 1000px;
       width: 100%;
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
@@ -91,7 +93,7 @@ if (!isset($_SESSION['logado'])) {
       padding: 8px 16px;
       background-color: #b5b5b5;
       /* fundo escuro */
-      color: black;
+      color: white;
       /* texto escuro */
       text-decoration: none;
       border: 1px solid #ccc;
@@ -101,12 +103,15 @@ if (!isset($_SESSION['logado'])) {
       border: 1px solid black;
       /* borda escuro */
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      font-weight: bold;
+      text-decoration: none;
     }
 
     .btn-voltar:hover {
       background-color: #8c8c8c;
       /* leve cinza ao passar o mouse */
       box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+      text-decoration: none;
     }
 
     .btn-voltar:active {
@@ -114,17 +119,31 @@ if (!isset($_SESSION['logado'])) {
     }
 
     #btnFinalizar {
-      background-color: #8c8c8c;
+      background-color: #b5b5b5;
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      font-weight: bold;
+      color: white;
     }
 
     #btnFinalizar:hover {
-      background-color: #b5b5b5;
+      background-color: #8c8c8c;
       box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     }
 
     #btnFinalizar:active {
       transform: translateY(4px);
+    }
+
+    h2 {
+      color: white;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      color: white;
+      margin-top: 20px;
+      margin-bottom: 10px;
     }
   </style>
 
@@ -133,7 +152,7 @@ if (!isset($_SESSION['logado'])) {
 
 <body>
   <div class="container">
-    <a href="/sistema-garantias/frontend/views/painel.php" class="btn-voltar">🔙 Voltar ao Painel</a>
+    <a href="/sistema-garantias/frontend/views/painel.php" class="btn-voltar">Voltar ao painel</a>
     <h2>Lançamento de Garantias</h2>
 
     <form action="/sistema-garantias/backend/controllers/salvar_lancamento.php" method="POST">
@@ -182,10 +201,10 @@ if (!isset($_SESSION['logado'])) {
       <label>Data da Coleta:</label><br>
       <input type="date" name="data_coleta" required><br><br>
 
-      <h3>Baterias</h3>
+      <h3>Baterias lançadas</h3>
       <div id="baterias"></div>
 
-      <button type="button" onclick="adicionarBateria()">➕ Adicionar Bateria</button><br><br>
+      <button type="button" onclick="adicionarBateria()">Adicionar Bateria</button><br><br>
 
       <input type="submit" value="Finalizar Lançamento" id="btnFinalizar">
 

@@ -28,7 +28,7 @@ if ($result->num_rows == 1) {
         <style>
             /* design para pagina */
             body {
-                background-color: #E4E4E5;
+                background-color: #666666;
                 margin: 0;
                 padding: 0;
                 font-family: 'Segoe UI', sans-serif;
@@ -39,7 +39,7 @@ if ($result->num_rows == 1) {
             }
     
             .container {
-                background-color: #b5b5b5;
+                background-color: #3c3c3c;
                 padding: 40px;
                 border-radius: 10px;
                 box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -50,17 +50,17 @@ if ($result->num_rows == 1) {
             }
     
             h1 {
-                color: #2c3e50;
+                color: #fff;
             }
     
             .error-message {
-                color: #444;
+                color: #fff;
             }
     
             .btn-voltar {
                 display: inline-block;
-                background-color: #8c8c8c;
-                color: black;
+                background-color: #b5b5b5;
+                color: white;
                 margin-top: 20px;
                 padding: 12px 24px;
                 text-decoration: none;
@@ -68,10 +68,11 @@ if ($result->num_rows == 1) {
                 border: 1px solid black;
                 transition: background-color 0.3s ease;
                 box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+                font-weight: bold;
             }
     
             .btn-voltar:hover {
-                background-color: #b5b5b5;
+                background-color: #8c8c8c;
                 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
             }
 

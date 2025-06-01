@@ -44,17 +44,17 @@ $res_bat = $conn->query($sql_bat);
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
-            background-color: #E4E4E5;
+            background-color: #666666;
         }
 
         .container {
             position: relative;
-            background-color: #b5b5b5;
+            background-color: #3c3c3c;
             padding: 25px;
             border-radius: 10px;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
             text-align: left;
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -66,12 +66,15 @@ $res_bat = $conn->query($sql_bat);
         h4 {
             text-align: center;
             margin-bottom: 20px;
+            color: white;
         }
 
         form {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 3px;
+            color: white;
+            font-weight: bold;
         }
 
         input[type="text"],
@@ -114,7 +117,7 @@ $res_bat = $conn->query($sql_bat);
         .bateria {
             border: 1px solid #ddd;
             padding: 15px;
-            background-color: #b5b5b5;
+            background-color: #3c3c3c;
             border-radius: 8px;
             border: 1px solid black;
             /* borda escuro */
@@ -143,7 +146,7 @@ $res_bat = $conn->query($sql_bat);
         .meu-botao {
             background-color: #b5b5b5;
             /* fundo escuro */
-            color: black;
+            color: white;
             /* texto escuro */
             border: 1px solid black;
             /* borda escuro */
@@ -173,6 +176,8 @@ $res_bat = $conn->query($sql_bat);
         #btnAtualizar {
             background-color: #8c8c8c;
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            color: white;
+            font-weight: bold;
         }
 
         #btnAtualizar:hover {
@@ -226,7 +231,7 @@ $res_bat = $conn->query($sql_bat);
     <div class="container">
 
         <button class="meu-botao" onclick="window.location.href='/sistema-garantias/frontend/views/consultar_lancamentos.php'">
-            ← Voltar para Consultar Lançamentos
+            Voltar para consulta
         </button>
 
 

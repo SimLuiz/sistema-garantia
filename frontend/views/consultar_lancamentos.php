@@ -57,23 +57,25 @@ $result = $conn->query($sql);
 
     <style>
         body {
-            background-color: #E4E4E5;
+            background-color: #666666;
             font-family: Arial, sans-serif;
             padding: 20px;
         }
 
         h2 {
             text-align: center;
+            color: white;
         }
 
         .filtros {
-            background-color: #b5b5b5;
+            background-color: #3c3c3c;
             /* fundo escuro */
-            color: black;
+            color: white;
             /* texto escuro */
             margin-bottom: 20px;
             padding: 10px;
             border-radius: 8px;
+            font-weight: bold;
         }
 
         a {
@@ -108,10 +110,13 @@ $result = $conn->query($sql);
         }
 
         table {
+            background-color: #3c3c3c;
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            color: white;
+            font-weight: bold;
         }
 
         th,
@@ -122,11 +127,11 @@ $result = $conn->query($sql);
         }
 
         th {
-            background-color: #b5b5b5;
+            background-color: #3c3c3c;
         }
 
         tr:nth-child(even) {
-            background-color: #b5b5b5;
+            background-color: #3c3c3c;
         }
 
         .actions {
@@ -165,7 +170,7 @@ $result = $conn->query($sql);
         .edit-battery-form {
             margin-top: 10px;
             /* Espaçamento entre as baterias */
-            background-color: #b5b5b5;
+            background-color: #666666;
             padding: 10px;
             border-radius: 8px;
         }
@@ -184,7 +189,7 @@ $result = $conn->query($sql);
             position: fixed;
             top: 20px;
             right: 20px;
-            background-color: #b5b5b5;
+            background-color: #3c3c3c;
             color: white;
             padding: 15px 20px;
             border-radius: 8px;
@@ -192,19 +197,20 @@ $result = $conn->query($sql);
             z-index: 1000;
             animation: slideIn 0.3s ease-out;
             box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            font-weight: bold;
         }
 
         .btn-voltar {
             background-color: #b5b5b5;
-            color: black;
+            color: white;
             border: 1px solid black;
             border-radius: 8px;
             margin-bottom: 10px;
             font-size: 16px;
             padding: 10px 8px;
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
-                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             cursor: pointer;
+            font-weight: bold;
         }
 
         .btn-voltar:hover {
@@ -219,14 +225,15 @@ $result = $conn->query($sql);
 
         .btn-limpar {
             background-color: #b5b5b5;
-            color: black;
+            color: white;
             border: 1px solid black;
             border-radius: 8px;
             padding: 10px 8px;
             font-size: 12px;
             cursor: pointer;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
-                0 6px 20px rgba(0, 0, 0, 0.19);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+            font-weight: bold;
+            width: 100px;
         }
 
         .btn-limpar:hover {
@@ -241,15 +248,16 @@ $result = $conn->query($sql);
 
         .btn-editar {
             background-color: #b5b5b5;
-            color: black;
+            color: white;
             border: 1px solid black;
             border-radius: 8px;
             padding: 8px 12px;
             font-size: 12px;
             cursor: pointer;
             margin-right: 5px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
-                0 6px 20px rgba(0, 0, 0, 0.19);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+            font-weight: bold;
+            width: 100px;
         }
 
         .btn-editar:hover {
@@ -296,7 +304,7 @@ $result = $conn->query($sql);
 
 
         <button type="button" class="btn-voltar" onclick="window.location.href='painel.php'">
-            ⬅ Voltar ao painel
+            Voltar ao painel
         </button><br><br>
 
         <h2>Consulta de Lançamentos</h2>
