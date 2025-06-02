@@ -18,7 +18,7 @@ if (!isset($_SESSION['logado'])) {
       background-color: #666666;
       font-family: Arial, sans-serif;
       text-align: center;
-      margin-top: 100px;
+      margin-top: 50px;
     }
 
     h1 {
