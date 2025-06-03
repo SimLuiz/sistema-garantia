@@ -3,22 +3,56 @@ session_start();
 include(__DIR__ . "/conexao.php");
 
 $usuario = $_POST['usuario'];
-$senha = md5($_POST['senha']); // criptografa com MD5
+$senhaDigitada = $_POST['senha']; // senha em texto plano
 
-$sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND senha = '$senha'";
-$result = $conn->query($sql);
+// Buscar usuário pelo nome
+$stmt = $conn->prepare("SELECT * FROM usuarios WHERE usuario = ?");
+$stmt->bind_param("s", $usuario);
+$stmt->execute();
+$result = $stmt->get_result();
 
-if ($result->num_rows == 1) {
+// Se encontrou o usuário
+if ($result->num_rows === 1) {
+    $dados_usuario = $result->fetch_assoc();
+
+    $hashArmazenado = $dados_usuario['senha'];
+
+    // Se for hash do password_hash
+    if (password_verify($senhaDigitada, $hashArmazenado)) {
+        // Login OK
+    }
+    // Se ainda for senha em md5
+    elseif (strlen($hashArmazenado) === 32 && md5($senhaDigitada) === $hashArmazenado) {
+        // Atualiza para password_hash
+        $novoHash = password_hash($senhaDigitada, PASSWORD_DEFAULT);
+        $stmtUpdate = $conn->prepare("UPDATE usuarios SET senha = ? WHERE id = ?");
+        $stmtUpdate->bind_param("si", $novoHash, $dados_usuario['id']);
+        $stmtUpdate->execute();
+        // Login OK
+    } else {
+        // Senha incorreta
+        mostrarTelaErroLogin();
+        exit;
+    }
+
+    // Login bem-sucedido
     $_SESSION['logado'] = true;
-    $dados_usuario = $result->fetch_assoc(); // pega o usuário como array associativo
     $_SESSION['usuario_id'] = $dados_usuario['id'];
-    $_SESSION['tipo_usuario'] = $dados_usuario['tipo']; // 'admin' ou 'motorista'
-    $_SESSION['usuario'] = $dados_usuario['usuario']; // salva o nome de usuário na sessão    
-    $_SESSION['login_sucesso'] = true; // Variável de sucesso
+    $_SESSION['tipo_usuario'] = $dados_usuario['tipo'];
+    $_SESSION['usuario'] = $dados_usuario['usuario'];
+    $_SESSION['login_sucesso'] = true;
+
     header("Location: /sistema-garantias/frontend/views/painel.php");
     exit;
 } else {
-    echo "
+    mostrarTelaErroLogin();
+    exit;
+}
+
+// Função para mostrar a tela de erro
+function mostrarTelaErroLogin()
+{
+    echo  "
     <!DOCTYPE html>
     <html lang='pt-br'>
     <head>

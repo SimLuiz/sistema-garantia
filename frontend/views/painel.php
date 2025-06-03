@@ -36,16 +36,16 @@ if (!isset($_SESSION['logado'])) {
       display: flex;
       /* flexbox para centralizar o texto */
       flex-direction: column;
-      padding: 10px 20px;
+      padding: 20px 40px;
       border: 1px solid black;
       /* borda escuro */
       text-decoration: none;
-      margin: 10px;
+      margin: 30px;
       /* espaçamento entre os links */
       border-radius: 8px;
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       justify-content: center;
-      font-size: 25px;
+      font-size: 23px;
       font-weight: bold;
       text-decoration: none;
     }
